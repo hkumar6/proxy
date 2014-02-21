@@ -1,0 +1,2357 @@
+***************************************************************************
+|                              Web Proxy Server                           |
+***************************************************************************
+
+Contents
+ 1. How to run
+ 2. Features
+ 3. Bugs
+ 4. Sample session
+
+---------------------------------------------------------------------------
+1. How to run
+
+  a) Open the directory in the terminal and type:
+      make
+  b) This will compile the code and produce an executable:
+      proxy
+  c) To run the proxy, type:
+      ./proxy <port>
+     where <port> is the port number where the proxy should start listening.
+
+---------------------------------------------------------------------------
+2. Features
+
+   The program implements HTTP/1.0 and supports minimal functionality with
+  simple text files with hyperlinks. Binary files are not handled.
+   Only GET method has been implemented.
+   Basic multi-threading has been implemented. It can be removed by
+  deleting the following line in 'kheader.h'
+      #define MULTITHREAD 1
+
+---------------------------------------------------------------------------
+3. Bugs
+  a) Limited testing has been done. Multithreaded proxy tends to hang up.
+  b) Errors were encountered while downloading css files.
+
+---------------------------------------------------------------------------
+4. Sample session
+
+Starting proxy on 8887
+Proxy running...
+Have fun ! - kh
+
+Message:
+GET http://intranet.iitg.ernet.in/ HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:58 GMT
+Server: Apache/2.2.15 (Red Hat)
+X-Powered-By: PHP/5.3.2
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Last-Modified: Thu, 20 Feb 2014 18:24:58 GMT
+Cache-Control: store, no-cache, must-revalidate
+Cache-CoNew thread 1080513248 created
+the thread 2267 fulfilled its destiny successfully
+Starting proxy on 8887
+Proxy running...
+Have fun ! - kh
+
+Message:
+GET http://intranet.iitg.ernet.in/ HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/node/node.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/defaults.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-E
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/system.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Enc
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/system-menus.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/user/user.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/modules/ckeditor/ckedicss HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Ac
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/utor.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;Starting proxy on 8887
+Proxy running...
+Have fun ! - kh
+
+Message:
+GET http://intranet.iitg.ernet.in/ HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/node/node.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "3602c9-2e4-4a1442c635fac"
+Accept-Ranges: bytes
+Content-Length: 740
+Connection: close
+Content-Type: text/css
+
+New thread 1080513248 created
+the thread 2268 fulfilled its destiny successfully
+Starting proxy on 8887
+Proxy running...
+Have fun ! - kh
+
+Message:
+GET http://intranet.iitg.ernet.in/ HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/node/node.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/defaults.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-E
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/system.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Enc
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/system-menus.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Acce
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "360343-3a7-4a1442c66e214"
+Accept-Ranges: bytes
+Content-Length: 935
+Connection: close
+Content-Type: text/css
+
+New thread 1080513248 created
+the thread 2271 fulfilled its destiny successfully
+Starting proxy on 8887
+Proxy running...
+Have fun ! - kh
+
+Message:
+GET http://intranet.iitg.ernet.in/ HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/node/node.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/defaults.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-E
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "36034d-2f5-4a1442c673fdc"
+Accept-Ranges: bytes
+Content-Length: 757
+Connection: close
+Content-Type: text/css
+
+New thread 1080513248 created
+the thread 2269 fulfilled its destiny successfully
+Starting proxy on 8887
+Proxy running...
+Have fun ! - kh
+
+Message:
+GET http://intranet.iitg.ernet.in/ HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/node/node.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/defaults.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-E
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/system.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Enc
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/system-menus.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/user/user.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "360281-467-4a1442c614499"
+Accept-Ranges: bytes
+Content-Length: 1127
+Connection: close
+Content-Type: text/css
+New thread 1080513248 created
+the thread 2272 fulfilled its destiny successfully
+Starting proxy on 8887
+Proxy running...
+Have fun ! - kh
+
+Message:
+GET http://intranet.iitg.ernet.in/ HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/node/node.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/defaults.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-E
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/system.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Enc
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "36034a-2729-4a1442c6718cc"
+Accept-Ranges: bytes
+Content-Length: 10025
+Connection: close
+Content-Type: text/cssNew thread 1080513248 created
+the thread 2270 fulfilled its destiny successfully
+q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gz
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Wed, 22 Aug 2012 09:56:05 GMT
+ETag: "36058e-1585-4c7d7c05250c4"
+Accept-Ranges: bytes
+Content-Length: 5509
+Connection: close
+Content-Type: text/css
+New thread 1080513248 created
+the thread 2275 fulfilled its destiny successfully
+q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gz
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/jquery.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/drupal.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "360258-266a-4a1442c5fdd5f"
+Accept-Ranges: bytes
+Content-Length: 9834
+Connection: close
+Content-Type: text/javasNew thread 1080513248 created
+the thread 2277 fulfilled its destiny successfully
+Starting proxy on 8887
+Proxy running...
+Have fun ! - kh
+
+Message:
+GET http://intranet.iitg.ernet.in/ HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+101 Firefox/27.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/node/node.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/defaults.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-E
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/system.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Enc
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/system/system-menus.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/modules/user/user.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encodin
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/modules/ckeditor/ckedicss HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Ac
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 404 Not Found
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+X-Powered-By: PHP/5.3.2
+Expires: Sun, 19 Nov 1978 05:00:0q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gz
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 404 Not Found
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+X-Powered-By: PHP/5.3.2
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Last-Modified: Thu, 20 Feb 2014 18:24:59 GMT
+Cache-Control: store, no-cache, must-revalidate
+CNew thread 1080513248 created
+the thread 2274 fulfilled its destiny successfully
+0 GMT
+Last-Modified: Thu, 20 Feb 2014 18:24:59 GMT
+Cache-Control: store, no-cache, must-revalidate
+CNew thread 1080513248 created
+the thread 2273 fulfilled its destiny successfully
+q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gz
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/jquery.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "360253-7971-4a1442c5fba14"
+Accept-Ranges: bytes
+Content-Length: 31089
+Connection: close
+Content-Type: text/javaNew thread 1080513248 created
+the thread 2276 fulfilled its destiny successfully
+q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gz
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/jquery.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/drupal.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-base.css HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.1
+Accept-Language: en-US,
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 12 Feb 2013 05:48:13 GMT
+ETag: "361639-2348-4d580924b2f86"
+Accept-Ranges: bytes
+Content-Length: 9032
+Connection: close
+Content-Type: text/css
+New thread 1080513248 created
+the thread 2278 fulfilled its destiny successfully
+q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gz
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/jquery.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/drupal.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-base.css HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.1
+Accept-Language: en-US,
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-mini.css HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-base.css
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+1
+Accept-Language: en-US,
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:42 GMT
+ETag: "36056d-ace-4a1442c73653b"
+Accept-Ranges: bytes
+Content-Length: 2766
+Connection: close
+Content-Type: text/css
+New thread 1080513248 created
+the thread 2279 fulfilled its destiny successfully
+q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gz
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/jquery.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/drupal.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-base.css HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.1
+Accept-Language: en-US,
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-mini.css HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-base.css
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+1
+Accept-Language: en-US,
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/js/jquery.pngFix.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/js/suckerfish.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+A
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:42 GMT
+ETag: "36049b-18b-4a1442c6e8ef1"
+Accept-Ranges: bytes
+Content-Length: 395
+Connection: close
+Content-Type: text/javascrNew thread 1080513248 created
+the thread 2281 fulfilled its destiny successfully
+q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gz
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+0100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/jquery.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/drupal.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Refe
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-base.css HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.1
+Accept-Language: en-US,
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-mini.css HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: text/css,*/*;q=0.1
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style-base.css
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+1
+Accept-Language: en-US,
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/js/jquery.pngFix.js?x HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+v:27.0) Gecko/20100101 Firefox/27.0
+Accept: */*
+Accept-Language: en-US,en;q=0.5
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:42 GMT
+ETag: "36049c-ab6-4a1442c6e92dc"
+Accept-Ranges: bytes
+Content-Length: 2742
+Connection: close
+Content-Type: text/javascNew thread 1080513248 created
+the thread 2280 fulfilled its destiny successfully
+accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/files/salamanderskins_logo.gif HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Lang
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "360383-1012-4a1442c693f94"
+Accept-Ranges: bytes
+Content-Length: 4114
+Connection: close
+Content-Type: image/gifNew thread 1080513248 created
+the thread 2282 fulfilled its destiny successfully
+accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/files/salamanderskins_logo.gif HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Lang
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/filelogan HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 404 Not Found
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+X-Powered-By: PHP/5.3.2
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Last-Modified: Thu, 20 Feb 2014 18:24:59 GMT
+Cache-Control: store, no-cache, must-revalidate
+CNew thread 1080513248 created
+the thread 2283 fulfilled its destiny successfully
+accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/files/salamanderskins_logo.gif HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Lang
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/filelogan HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/files/iitg_cc_acad_admin.jpg HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Langua
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "36037f-17d33-4a1442c68f169"
+Accept-Ranges: bytes
+Content-Length: 97587
+Connection: close
+Content-Type: image/jpNew thread 1080513248 created
+the thread 2284 fulfilled its destiny successfully
+accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/files/salamanderskins_logo.gif HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Lang
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/filelogan HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/files/iitg_cc_acad_admin.jpg HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Langua
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/mast-bg1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Acc
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/mast-r1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/mast-l1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/menu-div.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Acc
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/misc/menu-leaf.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/modules/system/system-menus.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/all/menu-expanded1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bar1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept-
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bottomregion-bg.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bottomline.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+A
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/footer-bg1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+A
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bar21.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/footer-r1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflateaccepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/files/salamanderskins_logo.gif HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Lang
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/filelogan HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/files/iitg_cc_acad_admin.jpg HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Langua
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/mast-bg1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Acc
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/mast-r1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/mast-l1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/menu-div.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Acc
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "3603fb-c9-4a1442c6bcbde"
+Accept-Ranges: bytes
+Content-Lenflate
+Referer: http://intranet.iitg.ernet.in/modules/system/system-menus.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/all/menu-expanded1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bar1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept-
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bottomregion-bg.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "3603ce-c3-4a1442c6af12c"
+Accept-Ranges: bytes
+Content-Length: 195
+Connection: close
+Content-Type: image/png
+
+New thread 1080513248 created
+the thread 2292 fulfilled its destiny successfully
+flate
+Referer: http://intranet.iitg.ernet.in/modules/system/system-menus.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Acce
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "360249-c2-4a1442c5f6424"
+Accept-Ranges: bytes
+Content-Length: 194
+Connection: close
+Content-Type: image/png
+
+New thread 1080513248 created
+the thread 2289 fulfilled its destiny successfully
+gth: 201
+Connection: close
+Content-Type: image/png
+
+New thread 1080513248 created
+the thread 2288 fulfilled its destiny successfully
+flate
+Referer: http://intranet.iitg.ernet.in/modules/system/system-menus.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/all/menu-expanded1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bar1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept-
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bottomregion-bg.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bottomline.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+A
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "3603ff-10d-4a1442c6bdb8c"
+Accept-Ranges: bytes
+Content-Length: 269
+Connection: close
+Content-Type: image/png
+New thread 1080513248 created
+the thread 2293 fulfilled its destiny successfully
+flate
+Referer: http://intranet.iitg.ernet.in/modules/system/system-menus.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Acce
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/all/menu-expanded1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bar1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept-
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bottomregion-bg.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bottomline.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+A
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/footer-bg1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+A
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/bar21.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Accept
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 404 Not Found
+Date: Thu, 20 Feb 2014 18:24:59 GMT
+Server: Apache/2.2.15 (Red Hat)
+X-Powered-By: PHP/5.3.2
+Expires: Sun, 19 Nov 1978 05:00:00 GMT
+Last-Modified: Thu, 20 Feb 2014 18:24:59 GMT
+Cache-Control: store, no-cache, mu
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Ac
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/footer-l1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Ac
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/shadow-bg1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+A
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/shadow-r1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Ac
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/images/shadow-l1.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://intranet.iitg.ernet.in/sites/all/themes/salamanderskins/style.css?x
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+=0.5
+Ac
+HTTP Request accepted
+
+Message:
+GET http://intranet.iitg.ernet.in/sites/default/files/salamanderskins_favicon.png HTTP/1.0
+Host: intranet.iitg.ernet.in
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Cookie: SESSccae9480c0b3d58db24ba48c019554c9=k4ghaarrg3r6qg94rg0jmpt9b6
+Connection: keep-alive
+
+x x86_64; rv:27.0) Gecko/20100101 Firefox/27.0
+Accept: image/png,image/*;q=0.8,*/*;q=0.5
+Accept-L
+HTTP Request accepted
+
+Host extracted : 'intranet.iitg.ernet.in'
+
+Connected to host
+
+reading server response
+HTTP/1.1 200 OK
+Date: Thu, 20 Feb 2014 18:27:15 GMT
+Server: Apache/2.2.15 (Red Hat)
+Last-Modified: Tue, 19 Apr 2011 11:54:41 GMT
+ETag: "360381-59a-4a1442c6937c4"
+Accept-Ranges: bytes
+Content-Length: 1434
+Connection: close
+Content-Type: image/png
+New thread 1080513248 created
+the thread 2488 fulfilled its destiny successfully
+
+-------------------------------------------------------------------------------------
+*************************************************************************************
